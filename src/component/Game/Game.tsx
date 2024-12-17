@@ -10,7 +10,7 @@ const Game: React.FC = () => {
   const shootBullet = () => {
     setBullets([
       ...bullets,
-      { startPosition: [0, 0.5, 0], direction: [0, 0, -1] }, // Inicializamos el proyectil desde la posición del tanque
+      { startPosition: [0, 0.5, 0], direction: [0, 0, -1] },
     ]);
   };
 
@@ -18,7 +18,7 @@ const Game: React.FC = () => {
     <Canvas camera={{ position: [10, 10, 10], fov: 75 }}>
       <ambientLight intensity={0.5} />
       <spotLight position={[10, 10, 10]} angle={0.15} />
-      <Tank onShoot={shootBullet} /> {/* Pasamos la función de disparo */}
+      <Tank onShoot={shootBullet} />
       {bullets.map((bullet, index) => (
         <Bullet key={index} startPosition={bullet.startPosition} direction={bullet.direction} />
       ))}

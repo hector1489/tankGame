@@ -17,11 +17,11 @@ const Bullet: React.FC<BulletProps> = ({ startPosition, direction }) => {
         prevPos[1] + direction[1],
         prevPos[2] + direction[2],
       ]);
-      requestAnimationFrame(moveBullet); // Llamamos a requestAnimationFrame para que se actualice de forma continua
+      requestAnimationFrame(moveBullet);
     };
-    moveBullet(); // Iniciamos la animación
+    moveBullet();
 
-    return () => cancelAnimationFrame(moveBullet as any); // Limpiamos el intervalo cuando el componente se desmonta
+    return () => cancelAnimationFrame(moveBullet as any);
   }, [direction]);
 
   return (
